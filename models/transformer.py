@@ -33,7 +33,7 @@ class TransformerSOH(nn.Module):
             num_layers=num_layers
         )
         self.output_linear = nn.Linear(embed_dim, input_dim)
-        self.PPA = PPA # 是否使用Prefix Prompt Adaptation
+        self.PPA = PPA # Prefix Prompt Adaptation
         if self.PPA:
             self.soft_prompt_len = soft_prompt_len                  
             # Initialize soft prompt
@@ -73,4 +73,4 @@ class TransformerSOH(nn.Module):
         # Denormalize the output
         output = output * stdev
         output = output + means
-        return output, memory[:, self.soft_prompt_len:, :].mean(dim=1) * stdev.squeeze(1) + means.squeeze(1) # 输出重建的output和中间表示
+        return output, memory[:, self.soft_prompt_len:, :].mean(dim=1) * stdev.squeeze(1) + means.squeeze(1) 
