@@ -203,7 +203,7 @@ class RBNet(nn.Module):
         # return dec_out
 
 
-    def forecast(self, x_enc): # 输入维度是B, L, M
+    def forecast(self, x_enc): # B, L, M
         B, L, M = x_enc.shape 
         x_enc = self.normalize_layers(x_enc, 'norm')
 
