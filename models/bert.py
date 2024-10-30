@@ -36,7 +36,7 @@ class BertSOH(nn.Module):
             if not any(layer in name.lower() for layer in ['ln', 'wpe', 'wte']):
                 param.requires_grad = False
 
-        self.PPA = PPA  # 是否使用Prefix Prompt Adaptation
+        self.PPA = PPA  # Prefix Prompt Adaptation
         if self.PPA:
             self.soft_prompt_len = soft_prompt_len                  
             # Initialize soft prompt
