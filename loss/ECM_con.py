@@ -7,7 +7,7 @@ def gradient_vector_function(f, x):
     m = len(f(x))
     gradient = np.zeros((m, n))
     
-    h = 1e-6  # 微小增量
+    h = 1e-6  
     
     for i in range(n):
         x_plus_h = np.copy(x)
