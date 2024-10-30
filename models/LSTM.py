@@ -4,7 +4,7 @@ class LSTM(nn.Module):
     def __init__(self):
         super().__init__()
         
-        self.lstm = nn.LSTM(input_size = 1, hidden_size = 8, num_layers = 2, batch_first = True) #输入是 batch, time_step(seq), input_size(fea)
+        self.lstm = nn.LSTM(input_size = 1, hidden_size = 8, num_layers = 2, batch_first = True) # batch, time_step(seq), input_size(fea)
         self.linear = nn.Linear(8,1) 
         self.bn = nn.BatchNorm1d(num_features=49)
         self.relu = nn.ReLU()
