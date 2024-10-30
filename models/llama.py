@@ -23,7 +23,7 @@ class PositionalEncoding(nn.Module):
 class LlamaSOH(nn.Module):
     def __init__(self, input_dim, llama_model_path, PPA=False, soft_prompt_len=10):
         super(LlamaSOH, self).__init__()
-        self.input_linear = nn.Linear(input_dim, 4096)  # LLama 7B 的嵌入维度是 4096
+        self.input_linear = nn.Linear(input_dim, 4096)  # LLama 7B 4096
         self.pos_encoder = PositionalEncoding(4096)
 
         # Load the pre-trained LLama 7B model
